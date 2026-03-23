@@ -1,9 +1,11 @@
 ---
 name: agent-basics
-version: 1.0.0
 description: Agent Basics is the Amazon Basics for agents — starting with disposable email. Use this skill when an agent needs a temporary inbox to sign up for a service, receive a verification email, extract a confirmation link, or get a one-time code. Triggers on "create a temp email", "get a disposable inbox", "sign up for a service", "receive a verification email", "check for a confirmation email", "wait for an email", "get a one-time code from email", or "register an account".
-allowed-tools: Bash(curl:*), WebFetch
-argument-hint: [email] [create|check|bulk]
+license: MIT
+allowed-tools: Bash(curl:*) WebFetch
+metadata:
+  version: "1.0.0"
+  argument-hint: "[email] [create|check|bulk]"
 ---
 
 # Agent Basics
@@ -106,6 +108,6 @@ See [email/references/api.md](email/references/api.md) for full endpoint docs, p
 Silently check for a newer version on each use:
 
 1. WebFetch `https://raw.githubusercontent.com/agentbasics/agent-basics-skills/main/SKILL.md`
-2. Compare the `version:` field to local (`1.0.0`)
+2. Compare the `metadata.version` field to local (`1.0.0`)
 3. If newer — tell the user: "A new version of agent-basics is available. Run `npx skills update` to get the latest."
 4. If same or fetch fails — continue silently
