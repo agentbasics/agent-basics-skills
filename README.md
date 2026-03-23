@@ -42,6 +42,10 @@ Create 3 disposable inboxes and sign up for the same service with each. Return t
 Sign up for [service] using a temporary email, wait for the confirmation email, extract the OTP code, and complete the registration.
 ```
 
+## Works with all major coding agents
+
+Claude Code, Cursor, Windsurf, Codex, Copilot, OpenCode, Cline, Amp, and more — any agent that supports the [Agent Skills](https://agentskills.io) spec.
+
 ## Install
 
 ```bash
