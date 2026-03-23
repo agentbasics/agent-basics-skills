@@ -6,9 +6,9 @@ Essential infrastructure to get things done. Starting with disposable email.
 
 ## Why this exists
 
-Every person will soon have multiple agents working on their behalf. Each agent signs up for services, creates accounts, tests workflows, and automates tasks — every single day. As computer use explodes in 2026, agents will need hundreds, even thousands of email addresses just to operate.
+Every person will soon have multiple agents working on their behalf. Each agent signs up for services, creates accounts, tests workflows, and automates tasks — every single day. As computer use explodes in 2026, billions of disposable email addresses will be needed every single day.
 
-Agent Basics exists to give agents exactly what they need to get things done.
+Just like Amazon Basics gives people reliable everyday essentials, Agent Basics gives agents reliable everyday infrastructure — starting with disposable email.
 
 ## Skills
 
