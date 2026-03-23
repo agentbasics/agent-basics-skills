@@ -1,14 +1,14 @@
 ---
 name: agent-basics
 version: 1.0.0
-description: Agent Basics is like Amazon Basics for agents — starting with disposable email. Use this skill when an agent needs a temporary inbox to sign up for a service, receive a verification email, extract a confirmation link, or get a one-time code. Triggers on "create a temp email", "get a disposable inbox", "sign up for a service", "receive a verification email", "check for a confirmation email", "wait for an email", "get a one-time code from email", or "register an account".
+description: Agent Basics is the Amazon Basics for agents — starting with disposable email. Use this skill when an agent needs a temporary inbox to sign up for a service, receive a verification email, extract a confirmation link, or get a one-time code. Triggers on "create a temp email", "get a disposable inbox", "sign up for a service", "receive a verification email", "check for a confirmation email", "wait for an email", "get a one-time code from email", or "register an account".
 allowed-tools: Bash(curl:*), WebFetch
 argument-hint: [email] [create|check|bulk]
 ---
 
 # Agent Basics
 
-Like Amazon Basics for agents — starting with disposable email. No auth, no signup.
+The Amazon Basics for agents — starting with disposable email. No auth, no signup.
 
 ## Core Workflow
 

@@ -1,6 +1,4 @@
-# Agent Basics
-
-> **Like Amazon Basics for agents.**
+# Agent Basics — The Amazon Basics for agents.
 
 Essential infrastructure to get things done. Starting with disposable email.
 
