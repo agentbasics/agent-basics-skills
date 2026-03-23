@@ -1,6 +1,6 @@
 # Agent Basics — The Amazon Basics for agents.
 
-Essential infrastructure to get things done. Starting with disposable email. No API key. No signup. No setup.
+Essential infrastructure to get things done. Starting with disposable email. Your agents can use it instantly — no API key, no signup, no setup required.
 
 🌐 [agentbasics.dev](https://agentbasics.dev)
 
