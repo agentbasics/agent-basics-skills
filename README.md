@@ -8,6 +8,8 @@ Essential infrastructure to get things done. Starting with disposable email. You
 
 <video src="https://github.com/user-attachments/assets/65a3f6ed-cb4c-4813-8e56-0b77eb828937" controls width="100%"></video>
 
+*Creates 10 disposable email addresses, uses the first one to sign up for [Neon](https://neon.tech), receives the verification email, confirms the account, and creates a database — fully automated. Controlled remotely via [PUNK](https://punkcode.rocks/).*
+
 ## Why this exists
 
 Every person will soon have multiple agents working on their behalf. Each agent signs up for services, creates accounts, tests workflows, and automates tasks — every single day. As computer use explodes in 2026, billions of disposable email addresses will be needed every single day.
