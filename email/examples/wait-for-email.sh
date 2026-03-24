@@ -13,18 +13,17 @@ INBOX=$(curl -s -X POST "$API/v1/email/inboxes" \
   -H "Content-Type: application/json" \
   -d '{"count": 1}')
 
-ADDRESS=$(echo "$INBOX" | python3 -c "import json,sys; print(json.load(sys.stdin)['inboxes'][0]['address'])")
+ADDRESS=$(jq -r '.inboxes[0].address' <<< "$INBOX")
 echo "Address: $ADDRESS" >&2
 
 # 2. Poll until email arrives (max 60s)
 for i in $(seq 1 20); do
   RESULT=$(curl -s "$API/v1/email/inboxes/$ADDRESS")
-  TOTAL=$(echo "$RESULT" | python3 -c "import json,sys; print(json.load(sys.stdin)['total'])" 2>/dev/null || echo "0")
+  TOTAL=$(jq -r '.total' <<< "$RESULT" 2>/dev/null || echo "0")
 
   if [ "$TOTAL" -gt "0" ]; then
     echo "Email received after $((i * 3))s" >&2
-    # Print the first email as JSON
-    echo "$RESULT" | python3 -c "import json,sys; d=json.load(sys.stdin); print(json.dumps(d['emails'][0], indent=2))"
+    jq '.emails[0]' <<< "$RESULT"
     exit 0
   fi
 

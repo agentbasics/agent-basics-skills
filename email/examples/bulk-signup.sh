@@ -14,37 +14,22 @@ INBOXES=$(curl -s -X POST "$API/v1/email/inboxes" \
   -H "Content-Type: application/json" \
   -d "{\"count\": $COUNT}")
 
-# Extract addresses
-ADDRESSES=$(echo "$INBOXES" | python3 -c "
-import json, sys
-data = json.load(sys.stdin)
-for inbox in data['inboxes']:
-    print(inbox['address'])
-")
-
 echo "Created:" >&2
-echo "$ADDRESSES" >&2
+jq -r '.inboxes[].address' <<< "$INBOXES" >&2
 
 # 2. Build JSON array for bulk check
-ADDR_JSON=$(echo "$ADDRESSES" | python3 -c "
-import json, sys
-addrs = [line.strip() for line in sys.stdin if line.strip()]
-print(json.dumps({'addresses': addrs}))
-")
+ADDR_JSON=$(jq '{addresses: [.inboxes[].address]}' <<< "$INBOXES")
 
 # 3. Bulk check (call after using the addresses for signups)
 echo ""
 echo "Checking inboxes (bulk)..." >&2
-curl -s -X POST "$API/v1/email/inboxes/bulk" \
+BULK=$(curl -s -X POST "$API/v1/email/inboxes/bulk" \
   -H "Content-Type: application/json" \
-  -d "$ADDR_JSON" | python3 -c "
-import json, sys
-results = json.load(sys.stdin)
-for inbox in results:
-    print(f'{inbox[\"address\"]}: {inbox.get(\"total\", 0)} email(s)')
-    for email in inbox.get('emails', []):
-        print(f'  From: {email[\"from\"]}')
-        print(f'  Subject: {email[\"subject\"]}')
-        if email.get('links'):
-            print(f'  Links: {email[\"links\"]}')
-"
+  -d "$ADDR_JSON")
+
+jq -r '.[] | "\(.address): \(.total) email(s)" + (
+  if .total > 0 then
+    "\n" + (.emails[] | "  From: \(.from)\n  Subject: \(.subject)" +
+      if (.links | length) > 0 then "\n  Links: \(.links | join(", "))" else "" end)
+  else "" end
+)' <<< "$BULK"
