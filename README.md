@@ -4,6 +4,10 @@ Essential infrastructure to get things done. Starting with disposable email. You
 
 🌐 [agentbasics.dev](https://agentbasics.dev)
 
+```bash
+npx skills install agentbasics/agent-basics-skills
+```
+
 ## Demo
 
 <video src="https://github.com/user-attachments/assets/65a3f6ed-cb4c-4813-8e56-0b77eb828937" controls width="100%"></video>
@@ -51,12 +55,6 @@ Sign up for [service] using a temporary email, wait for the confirmation email, 
 ## Works with all major coding agents
 
 Claude Code, Cursor, Windsurf, Codex, Copilot, OpenCode, Cline, Amp, and more — any agent that supports the [Agent Skills](https://agentskills.io) spec.
-
-## Install
-
-```bash
-npx skills install agentbasics/agent-basics-skills
-```
 
 ## More services coming soon
 
