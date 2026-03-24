@@ -2,8 +2,6 @@
 
 Essential infrastructure to get things done. Starting with disposable email. Your agents can use it instantly — no API key, no signup, no setup required.
 
-🌐 [agentbasics.dev](https://agentbasics.dev)
-
 ```bash
 npx skills install agentbasics/agent-basics-skills
 ```
@@ -12,7 +10,7 @@ npx skills install agentbasics/agent-basics-skills
 
 <video src="https://github.com/user-attachments/assets/65a3f6ed-cb4c-4813-8e56-0b77eb828937" controls width="100%"></video>
 
-*Creates 10 disposable email addresses, uses the first one to sign up for [Neon](https://neon.tech), receives the verification email, confirms the account, and creates a database — fully automated. Controlled remotely via [PUNK](https://punkcode.rocks/).*
+*Creates 10 disposable email addresses, uses the first one to sign up for [Neon](https://neon.tech), receives the verification email, confirms the account, and creates a database. Controlled via local Claude Code, remotely via [PUNK](https://punkcode.rocks/).*
 
 ## Why this exists
 
