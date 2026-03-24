@@ -6,7 +6,7 @@ Essential infrastructure to get things done. Starting with disposable email. You
 
 ## Demo
 
-<video src="https://github.com/agentbasics/agent-basics-skills/releases/download/v1.0.0/agent-basics-demo.mp4" controls width="100%"></video>
+<video src="https://github.com/agentbasics/assets/raw/main/agent-basics-demo.mp4" controls width="100%"></video>
 
 ## Why this exists
 
