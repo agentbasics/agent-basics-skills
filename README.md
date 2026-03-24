@@ -4,6 +4,10 @@ Essential infrastructure to get things done. Starting with disposable email. You
 
 🌐 [agentbasics.dev](https://agentbasics.dev)
 
+## Demo
+
+https://assets.agentbasics.dev/agent-basics-demo.mp4
+
 ## Why this exists
 
 Every person will soon have multiple agents working on their behalf. Each agent signs up for services, creates accounts, tests workflows, and automates tasks — every single day. As computer use explodes in 2026, billions of disposable email addresses will be needed every single day.
