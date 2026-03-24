@@ -25,21 +25,21 @@ The Amazon Basics for agents — starting with disposable email. No auth, no sig
 INBOX=$(curl -s -X POST https://api.agentbasics.dev/v1/email/inboxes \
   -H "Content-Type: application/json" \
   -d '{"count": 1}')
-ADDRESS=$(echo "$INBOX" | python3 -c "import json,sys; print(json.load(sys.stdin)['inboxes'][0]['address'])")
+ADDRESS=$(printf '%s\n' "$INBOX" | python3 -c "import json,sys; print(json.load(sys.stdin)['inboxes'][0]['address'])")
 
 # 2. Use the address wherever needed (form, API call, etc.)
 
 # 3. Poll
 for i in $(seq 1 20); do
   RESULT=$(curl -s "https://api.agentbasics.dev/v1/email/inboxes/$ADDRESS")
-  TOTAL=$(echo "$RESULT" | python3 -c "import json,sys; print(json.load(sys.stdin)['total'])" 2>/dev/null)
-  [ "$TOTAL" -gt "0" ] && { echo "$RESULT"; break; }
+  TOTAL=$(printf '%s\n' "$RESULT" | python3 -c "import json,sys; print(json.load(sys.stdin)['total'])" 2>/dev/null)
+  [ "$TOTAL" -gt "0" ] && { printf '%s\n' "$RESULT"; break; }
   [ "$i" -eq 20 ] && { echo "Timeout: no email after 60s" >&2; exit 1; }
   sleep 3
 done
 
 # 4. Extract verification link
-LINK=$(echo "$RESULT" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d['emails'][0]['links'][0])")
+LINK=$(printf '%s\n' "$RESULT" | python3 -c "import json,sys; d=json.load(sys.stdin); print(d['emails'][0]['links'][0])")
 ```
 
 ## Essential Commands
